@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact name="command-line-app">
+    <output-path>$PROJECT_DIR$/out/artifacts/command_line_app</output-path>
+    <root id="root">
+      <element id="archive" name="Tori-Notifier.jar">
+        <element id="module-output" name="ToriNotifier" />
+        <element id="module-output" name="Access" />
+        <element id="module-output" name="Flow" />
+        <element id="module-output" name="Disciple" />
+        <element id="module-output" name="BunnyMunch" />
+      </element>
+      <element id="library" level="application" name="scala-sdk-2.13.7" />
+      <element id="library" level="project" name="apache.httpcomponents.client5.httpclient5" />
+    </root>
+  </artifact>
+</component>
