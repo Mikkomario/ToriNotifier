@@ -6,12 +6,12 @@ import utopia.disciple.http.request.Request
 import utopia.disciple.http.response.ResponseParser
 import utopia.disciple.model.error.RequestFailedException
 import utopia.flow.async.AsyncExtensions._
-import utopia.flow.async.ThreadPool
-import utopia.flow.generic.DataType
-import utopia.flow.parse.Regex
-import utopia.flow.util.IterateLines
+import utopia.flow.async.context.ThreadPool
+import utopia.flow.generic.model.mutable.DataType
+import utopia.flow.parse.string.Regex
+import utopia.flow.parse.string.IterateLines
 import utopia.flow.util.logging.{Logger, SysErrLogger}
-import utopia.flow.util.CollectionExtensions._
+import utopia.flow.collection.CollectionExtensions._
 import utopia.flow.util.StringExtensions._
 
 import java.nio.charset.StandardCharsets
@@ -27,7 +27,6 @@ import scala.util.{Failure, Success}
  */
 object StatusReadTestApp extends App
 {
-	DataType.setup()
 	Status.setup()
 	
 	implicit val log: Logger = SysErrLogger

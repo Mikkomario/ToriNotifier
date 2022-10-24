@@ -1,7 +1,6 @@
 package vf.tori.app
 
 import utopia.access.http.Status
-import utopia.flow.generic.DataType
 import vf.tori.controller.SalesItems
 
 import scala.io.StdIn
@@ -13,7 +12,6 @@ import scala.io.StdIn
  */
 object ToriCommandLineApp extends App
 {
-	DataType.setup()
 	Status.setup()
 	
 	SalesItems.startUpdates()

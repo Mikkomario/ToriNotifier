@@ -1,8 +1,8 @@
 package vf.tori.util
 
 import utopia.bunnymunch.jawn.JsonBunny
-import utopia.flow.async.ThreadPool
-import utopia.flow.parse.JsonParser
+import utopia.flow.async.context.ThreadPool
+import utopia.flow.parse.json.JsonParser
 import utopia.flow.util.logging.{Logger, SysErrLogger}
 
 import scala.concurrent.ExecutionContext

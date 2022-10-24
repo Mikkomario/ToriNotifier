@@ -7,11 +7,11 @@ import utopia.disciple.http.request.Request
 import utopia.disciple.http.response.ResponseParser
 import utopia.disciple.model.error.RequestFailedException
 import utopia.flow.async.AsyncExtensions._
-import utopia.flow.generic.ValueConversions._
-import utopia.flow.parse.Regex
-import utopia.flow.util.IterateLines
+import utopia.flow.generic.casting.ValueConversions._
+import utopia.flow.parse.string.Regex
+import utopia.flow.parse.string.IterateLines
 import utopia.flow.util.logging.Logger
-import utopia.flow.util.CollectionExtensions._
+import utopia.flow.collection.CollectionExtensions._
 import utopia.flow.util.StringExtensions._
 import vf.tori.model.SalesItem
 

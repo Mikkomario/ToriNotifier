@@ -1,12 +1,12 @@
 package vf.tori.controller
 
-import utopia.flow.async.LoopingProcess
-import utopia.flow.container.ObjectsFileContainer
-import utopia.flow.container.SaveTiming.OnJvmClose
+import utopia.flow.async.process.LoopingProcess
 import utopia.flow.time.Now
 import utopia.flow.time.TimeExtensions._
-import utopia.flow.util.CollectionExtensions._
-import utopia.flow.util.FileExtensions._
+import utopia.flow.collection.CollectionExtensions._
+import utopia.flow.parse.file.container.ObjectsFileContainer
+import utopia.flow.parse.file.container.SaveTiming.OnJvmClose
+import utopia.flow.parse.file.FileExtensions._
 import vf.tori.model.SalesItem
 import vf.tori.util.Common._
 
@@ -24,7 +24,7 @@ object SalesItems
 	// ATTRIBUTES   -------------------------
 	
 	private val container = new ObjectsFileContainer("data/sales-items.json", SalesItem, OnJvmClose)
-	private lazy val updateLoop = LoopingProcess.static(3.minutes) { _ =>
+	private lazy val updateLoop = LoopingProcess.static(10.minutes) { _ =>
 		ReadSalesItems("polttopuu").onComplete { _.flatten match {
 			case Success(items) => container.current = items
 			case Failure(error) => log(error, "Sales items reading failed")
